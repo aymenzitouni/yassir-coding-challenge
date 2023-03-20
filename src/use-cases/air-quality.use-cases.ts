@@ -41,7 +41,18 @@ const saveAirQualityDataByLatitudeAndLogitude = async ({
   }
 };
 
+const getMostPollutedZoneTime = async () => {
+  try {
+    const data =
+      await airQualityService.findAirQualityRecordWithHighestPollution();
+    return data;
+  } catch (error) {
+    throw new InternalServerException();
+  }
+};
+
 export default {
   getAirQualityByLatitudeAndLogitude,
   saveAirQualityDataByLatitudeAndLogitude,
+  getMostPollutedZoneTime,
 };

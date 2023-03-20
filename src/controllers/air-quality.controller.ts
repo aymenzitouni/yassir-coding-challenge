@@ -24,6 +24,8 @@ const getMostPollutedZoneTime = async (
   next: NextFunction
 ) => {
   try {
+    const data = await airQualityUseCases.getMostPollutedZoneTime();
+    res.status(200).send({ result: data });
   } catch (error) {}
 };
 

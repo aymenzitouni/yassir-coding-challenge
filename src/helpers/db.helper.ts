@@ -7,7 +7,10 @@ const db = (model: "airQuality") => {
   const create = async (data: any) => {
     return await table.create({ data: { ...data } });
   };
-  return { create };
+  const findFirst = async ({ where, orderBy }: any) => {
+    return await table.findFirst({ where, orderBy });
+  };
+  return { create, findFirst };
 };
 
 export default db;
