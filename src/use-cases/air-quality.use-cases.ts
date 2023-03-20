@@ -1,6 +1,7 @@
 import { apisHelper } from "../helpers";
 import { InternalServerException } from "../exceptions";
 import { I_GPS_CORDINATES } from "../schemas/types";
+
 const getAirQualityByLatitudeAndLogitude = async ({
   latitude,
   longitude,

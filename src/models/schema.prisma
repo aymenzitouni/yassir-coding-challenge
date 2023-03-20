@@ -1,6 +1,3 @@
-// This is your Prisma schema file,
-// learn more about it in the docs: https://pris.ly/d/prisma-schema
-
 generator client {
   provider = "prisma-client-js"
 }
@@ -10,6 +7,13 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model Random {
-  id Int @id @unique
+model AirQuality {
+  id Int @unique @id @default(autoincrement())
+  latitude String
+  longitude String
+  aqius Int
+  aqicn Int
+  maincn String
+  mainus String
+  createdAt DateTime @default(now())      
 }
