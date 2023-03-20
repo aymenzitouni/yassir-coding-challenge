@@ -1,9 +1,10 @@
+import configs from "../configs";
 import airQualityCronJob from "./air-quality.cron-jobs";
 
 const startCronJobs = () => {
   airQualityCronJob.saveZoneDataEachMinute({
-    longitude: "2.352222",
-    latitude: "48.856613",
+    longitude: configs.ZONE_CORDINATES.LONGITUDE,
+    latitude: configs.ZONE_CORDINATES.LATITUDE,
   });
 };
 

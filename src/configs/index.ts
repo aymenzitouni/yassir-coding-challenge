@@ -1,0 +1,2 @@
+const ZONE_CORDINATES = { LONGITUDE: "2.352222", LATITUDE: "48.856613" };
+export default { ZONE_CORDINATES };

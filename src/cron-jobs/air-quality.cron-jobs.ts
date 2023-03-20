@@ -8,20 +8,11 @@ const saveZoneDataEachMinute = async ({
   cronJobsHelper.scheduleCronJob({
     interval: "*/10 * * * * *",
     action: async () => {
-      const {
-        pollution: { aqius, aqicn, mainus, maincn },
-      } = await airQualityUseCases.getAirQualityByLatitudeAndLogitude({
+      await airQualityUseCases.saveAirQualityDataByLatitudeAndLogitude({
         latitude,
         longitude,
       });
-      console.log("@data", {
-        longitude,
-        latitude,
-        aqius,
-        aqicn,
-        mainus,
-        maincn,
-      });
+      console.log("@saved");
     },
   });
 };
