@@ -1,7 +1,7 @@
-import axios from "axios";
+import axios, { AxiosResponse } from "axios";
 
-const get = async ({ url }: { url: string }) => {
-  return await axios.get(url);
+export const httpHelper = {
+  get: async ({ url }: { url: string }): Promise<AxiosResponse<any>> => {
+    return await axios.get(url);
+  },
 };
-
-export default { get };

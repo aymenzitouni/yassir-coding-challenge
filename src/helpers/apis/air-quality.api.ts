@@ -1,5 +1,5 @@
 import { I_GPS_CORDINATES } from "src/schemas/types";
-import httpHelper from "../http.helper";
+import { httpHelper } from "../http.helper";
 
 const getAirQualityByZone = async ({
   latitude,

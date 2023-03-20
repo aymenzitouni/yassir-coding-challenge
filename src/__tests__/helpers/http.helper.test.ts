@@ -1,5 +1,5 @@
 import axios from "axios";
-import { httpHelper } from "../../../helpers";
+import { httpHelper } from "../../helpers";
 
 jest.mock("axios");
 

@@ -12,7 +12,7 @@ const getAirQuality = async (
       latitude: String(latitude),
       longitude: String(longitude),
     });
-    res.send({ "result ": data });
+    res.send({ result: data });
   } catch (error) {
     next(error);
   }
