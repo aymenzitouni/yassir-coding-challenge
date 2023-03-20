@@ -10,7 +10,6 @@
   "scripts": {
     "start:prod": "prisma migrate deploy && node src/server.js",
     "build": "tsc",
-    "prod": "prisma migrate deploy && nodemon --spawn --exec ts-node -- src/server.ts",
     "dev": "nodemon --spawn --exec ts-node -- src/server.ts",
     "clean": "tsc --build --clean",
     "lint": "eslint . --ext .ts,.tsx",

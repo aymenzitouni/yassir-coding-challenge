@@ -8,16 +8,20 @@ const saveZoneDataEachMinute = async ({
   longitude,
 }: I_GPS_CORDINATES) => {
   cronJobsHelper.scheduleCronJob({
-    interval: "*/10 * * * * *",
+    interval: "* * * * *",
     action: async () => {
-      await airQualityUseCases.saveAirQualityDataByLatitudeAndLogitude(
-        { apisHelper, airQualityService },
-        {
-          latitude,
-          longitude,
-        }
-      );
-      console.log("@saved");
+      try {
+        await airQualityUseCases.saveAirQualityDataByLatitudeAndLogitude(
+          { apisHelper, airQualityService },
+          {
+            latitude,
+            longitude,
+          }
+        );
+        console.log("@data_saved by cron-job");
+      } catch (error) {
+        console.log("@cron-job ( saveZoneDataEachMinute ) error");
+      }
     },
   });
 };

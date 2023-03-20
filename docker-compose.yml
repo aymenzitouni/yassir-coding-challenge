@@ -1,0 +1,33 @@
+version: "3"
+services:
+  api:
+    image: aymenzitouni/yassir-coding-challenge
+    environment:
+      PORT: "5000"
+      DATABASE_URL: postgresql://admin:admin@db:5432/default_db_v1?schema=public
+      AIR_QUALITY_API_KEY: 891a6a29-1c4a-42f8-98f6-f8bb78babe7b
+    depends_on:
+      - db
+    ports:
+      - "5000:5000"
+    networks:
+      - my-network
+
+  db:
+    image: postgres
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: admin
+      POSTGRES_DB: default_db
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+    networks:
+      - my-network
+volumes:
+  postgres-data:
+
+networks:
+  my-network:
+    driver: bridge
