@@ -1,0 +1,48 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "yassir-coding-callange",
+    "dateExported": "2023-03-20T23:12:52.549Z",
+    "version": "1.1",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "0d7d3607-a1be-4fa2-977a-932be7d3603a",
+            "colId": "ab56d657-fa64-4f3a-b9e0-1521417e37dc",
+            "containerId": "",
+            "name": "get-air-quality-by-latitiude-and-longitude",
+            "url": "{{YASSIR_CODING_CHALLENGE_URL}}/api/air-quality?longitude=2.352222&latitude=48.856613",
+            "method": "GET",
+            "sortNum": 10000,
+            "created": "2023-03-20T15:24:58.456Z",
+            "modified": "2023-03-20T15:26:10.606Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "longitude",
+                    "value": "2.352222",
+                    "isPath": false
+                },
+                {
+                    "name": "latitude",
+                    "value": "48.856613",
+                    "isPath": false
+                }
+            ],
+            "tests": []
+        },
+        {
+            "_id": "fa0c29d2-7968-4293-bdaa-0d0ed40098e6",
+            "colId": "ab56d657-fa64-4f3a-b9e0-1521417e37dc",
+            "containerId": "",
+            "name": "get-most-polluted-time-zone",
+            "url": "{{YASSIR_CODING_CHALLENGE_URL}}/api/air-quality/most-polluted-time-zone",
+            "method": "GET",
+            "sortNum": 20000,
+            "created": "2023-03-20T16:23:29.182Z",
+            "modified": "2023-03-20T16:23:42.618Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        }
+    ]
+}
