@@ -1,6 +1,7 @@
 import { NextFunction, Request, Response } from "express";
 import { airQualityUseCases } from "../use-cases";
-
+import { airQualityService } from "../services";
+import { apisHelper } from "../helpers";
 const getAirQuality = async (
   req: Request,
   res: Response,
@@ -8,10 +9,13 @@ const getAirQuality = async (
 ) => {
   const { longitude, latitude } = req.query;
   try {
-    const data = await airQualityUseCases.getAirQualityByLatitudeAndLogitude({
-      latitude: String(latitude),
-      longitude: String(longitude),
-    });
+    const data = await airQualityUseCases.getAirQualityByLatitudeAndLogitude(
+      { apisHelper },
+      {
+        latitude: String(latitude),
+        longitude: String(longitude),
+      }
+    );
     res.send({ result: data });
   } catch (error) {
     next(error);
@@ -24,7 +28,9 @@ const getMostPollutedZoneTime = async (
   next: NextFunction
 ) => {
   try {
-    const data = await airQualityUseCases.getMostPollutedZoneTime();
+    const data = await airQualityUseCases.getMostPollutedZoneTime({
+      airQualityService,
+    });
     res.status(200).send({ result: data });
   } catch (error) {}
 };
