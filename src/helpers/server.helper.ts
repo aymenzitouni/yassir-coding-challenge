@@ -4,9 +4,9 @@ import dotenv from "dotenv";
 import compression from "compression";
 import cors from "cors";
 import morgan from "morgan";
-
 import router from "../routes";
 import { errorsMiddleware } from "../middlewares";
+import cronJobsHelper from "./cron-jobs.helper";
 
 const createServer = () => {
   dotenv.config();
@@ -18,7 +18,10 @@ const createServer = () => {
 
   app.use(express.urlencoded({ extended: true }));
   app.use(express.json());
-
+  cronJobsHelper.scheduleCronJob({
+    interval: "*/10 * * * * *",
+    action: () => console.log("cron-job-executed"),
+  });
   app.use(compression());
   app.use(cors());
   app.use("/api", router);
