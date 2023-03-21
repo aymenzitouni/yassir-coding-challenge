@@ -14,13 +14,13 @@ Before running this project, make sure you have the following installed:
 ## Installation
 
 1. Clone the repository:
-   `git clone [insert repository link here]`
+   `git clone https://github.com/aymenzitouni/yassir-coding-challenge`
 
 2. Copy the environment file:
    `cp .env.example .env`
 
 3. Navigate to the project directory:
-   `cd [project directory]`
+   `cd yassir-coding-challenge`
 
 4. Import docs collection:
    `api-docs-collection_yassir-coding-callange.json`
